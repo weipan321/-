@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{
+				padding:0;
+				margin: 0;
+			}
+			
+			
+			#box{
+				width:200px;
+				height:230px;
+				border:1px solid;
+				margin:50px auto;
+				padding:15px;
+				background:#ddd;
+			}
+			p{
+				margin-top:10px;
+				font-weight:bold;
+				font-size: 14px;
+			}
+			input{
+				width:190px;
+			}
+			button{
+				width:190px;
+				background: yellow;
+				border: none;
+				margin-top:10px;
+			}
+	
+			#box .hidden{
+				display: none;
+			}
+			#box .success{
+				color:green;
+				display: block;
+				
+			}
+			#box .error{
+			
+				color: red;
+			}
+			span{
+				height:8px;
+				font-size: 14px;
+			}
+			#aaa{
+				font-weight: bold;
+				height:20px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<form >
+			<div id="box">
+				<h2>创建账户</h2>
+				<p>电子邮件地址(可选)</p>
+				<input type="text" id="uname" />
+				<span class="hidden">请输入邮箱</span>	
+				<p>密码</p>
+				<input type="password" id="pwd" />
+				<span class="hidden">请输入邮箱</span>	
+				<p>密码必须至少为6个字母</p>
+				<button id="aaa">继续</button>
+			</div>
+		</form>
+	</body>
+</html>
+<script>
+	var uname=document.getElementById("uname");
+	var pwd=document.getElementById("pwd");
+	var btn=document.getElementById("btn")
+	uname.addEventListener("blur",confirmUname);
+	function confirmUname(){
+		//验证邮箱得函数。
+		var email_reg=/^\w{6,20}@[a-z0-9]{2,7}\.[a-z]{2,8}$/;
+			var uname_str=uname.value;
+//			console.log(email_reg.test(uname_str))
+			var tip=uname.parentNode.children[3];
+//			console.log(tip)
+			if(email_reg.test(uname_str)){
+				tip.setAttribute("class", "success");
+				tip.innerHTML="正确";
+				console.log(tip)
+				
+			}else{
+				tip.setAttribute("class", "error");
+				tip.innerHTML="请输入正确邮箱地址哦！";
+				
+		}
+			}
+	pwd.addEventListener("blur",confirmPwd);
+		function confirmPwd(){
+			var psw_reg=/^.{6,20}$/;
+			var psw_str=pwd.value;
+			var tip=pwd.parentNode.children[6];
+			if(psw_reg.test(psw_str)){
+				var index=0;
+				
+				var symbol_reg=/[!\@\#\$\%\^\&\*\(\)]/;	
+				if(symbol_reg.test(psw_str)){
+					index++
+				}
+				//判断是否有数字
+				var number_reg=/\d/
+				if(number_reg.test(psw_str)){
+					index++
+				}
+				var letter_reg=/[a-z]/i;
+//				console.log(letter_reg.test(psw_str))
+				if(letter_reg.test(psw_str)){
+					index++
+					
+				}
+				var qiang_reg=/(?!^\\d+$)(?!^[a-zA-Z]+$)(?!^[_#@]+$)/;
+				if(qiang_reg.test(psw_str)){
+					index++
+				}
+				
+				
+				
+				switch(index){
+					
+					case 0:
+					case 1: tip.setAttribute("class", "success");
+							tip.innerHTML="弱";
+							break;
+					case 2:tip.setAttribute("class", "success");
+							tip.innerHTML="弱";
+							break;
+					case 3: tip.setAttribute("class", "success");
+							tip.innerHTML="中";
+							break;
+					case 4: tip.setAttribute("class", "success");
+							tip.innerHTML="强";
+							break;
+								
+				}
+//				console.log(2)
+				console.log(index)
+			}else{
+							tip.setAttribute("class", "error");
+							tip.innerHTML="给老子输入密码操";
+			}
+		}
+		
+</script>

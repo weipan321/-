@@ -589,17 +589,23 @@ footer .erweima{
 
 
 /* 详情页面 */
-
-
-
-
+.details{
+    width:1280px;
+    height:606px;
+    margin:0 auto;
+}
+.details_left{
+    width:496px;
+   
+    float:left;
+}
 
 
 .container-magnifier{
     width: 452px;
     margin: 40px;
     position: relative;
-    margin-left:100px;
+    
 }
 
 .wrap-small-magnifier{
@@ -668,4 +674,149 @@ footer .erweima{
     left: 0;
     top: 0;
 }
-/*   鼠标跟随 */
+.detalis_right{
+    width:724px;
+  
+    height:606px;
+    float:left;
+    margin-top:40px;
+    margin-left:40px;
+}
+.detalis_name{
+    height:102px;
+    border-bottom:1px dashed #c4c4c4;
+}
+.detalis_name h2{
+    font-size:26px;
+    margin-bottom:22px;
+}
+.detalis_name p{
+    font-size:30px;
+    color:red;
+    float:left;
+}
+.detalis_name span{
+    font-size:16px;
+    color:#c4c4c4;
+    display: block;
+    line-height: 50px;
+    margin-left:135px;
+    text-decoration:line-through;
+}
+.detalis_number{
+    height:60px;
+    border-bottom:1px dashed #c4c4c4;
+    line-height:60px;
+        
+}
+.detalis_number .p1_number{
+    float:left;
+    font-size:12px;
+
+}
+.detalis_number .p2_number{
+    float:left;
+    font-size:12px;
+    margin-left:200px;
+    
+}
+.detalis_number span{
+    font-size:20px;
+    margin-left:200px;
+    color:goldenrod;
+}
+.detalis_color{
+    margin-top:20px;
+    height:38px;
+    line-height:34px;
+    font-size:16px;
+}
+.detalis_color p{
+    float:left;
+
+}
+.detalis_color span{
+    display:block;
+    float:left;
+    height:34px;
+    width:50px;
+    border:2px solid red;
+    text-align: center;
+    margin-left:30px;
+}
+.detalis_size{
+    margin-top:20px;
+    height:38px;
+    line-height:34px;
+    font-size:16px;
+}
+.detalis_size p{
+    float:left;
+}
+.detalis_size span{
+    display:block;
+    float:left;
+    height:34px;
+    width:50px;
+    border:2px solid red;
+    text-align: center;
+    margin-left:30px;
+}
+
+.number{
+    height:40px;
+    margin-top:40px;
+}
+.number .p1{
+    
+    float:left;
+    line-height: 40px;
+    font-size:18px;
+}
+.number .p2{
+    width:34px;
+    height:34px;
+    border:1px solid #c4c4c4;
+    margin-left:40px;
+    float:left;
+    text-align: center;
+    line-height: 34px;
+}
+.number .p3{
+    border-top:1px solid #c4c4c4;
+    border-bottom:1px solid #c4c4c4;
+    width:50px;
+    height:34px;
+    float:left;
+    text-align: center;
+    line-height: 34px;
+}
+.number .p4{
+    width:34px;
+    height:34px;
+    border:1px solid #c4c4c4;
+    float:left;
+    text-align: center;
+    line-height: 34px;
+}
+.number .p5{
+    float:left;
+    line-height:34px;
+    margin-left:20px;
+}
+
+.shop{
+    height:56px;
+    margin-top:20px;
+}
+.shop p{
+    width:200px;
+    height:56px;
+    background:red;
+    float:left;
+    margin-right:20px;
+    text-align: center;
+    line-height:56px;
+    font-weight: bold;
+    font-size:18px;
+}
